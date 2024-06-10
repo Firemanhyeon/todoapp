@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: todoapp
+  datasource:
+    url: jdbc:mysql://lion-db.cvy264s0ac5v.ap-southeast-2.rds.amazonaws.com:3306/mydatabase
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
