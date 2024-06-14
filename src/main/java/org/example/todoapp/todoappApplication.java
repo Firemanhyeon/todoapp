@@ -1,10 +1,12 @@
 package org.example.todoapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.ssm.SsmClient;
 import software.amazon.awssdk.services.ssm.model.GetParameterRequest;
 import software.amazon.awssdk.services.ssm.model.GetParameterResponse;
@@ -27,6 +29,9 @@ public class todoappApplication {
 //			System.out.println("DB_PASSWORD:::"+dbPassword);
 //		};
 //	}
+
+    @Autowired
+    private S3Client s3Client;
 
     @Bean
     public CommandLineRunner run() {
